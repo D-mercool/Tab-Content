@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     //Таймер
 
-    let deadline = '2019-12-03';
+    let deadline = '2019-12-05';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()); // Вычисляем разницу между дедлайном и настоящим временем (мс)
