@@ -37,7 +37,7 @@ window.addEventListener('DOMContentLoaded', function() {
 
     //Таймер
 
-    let deadline = '2019-12-02';
+    let deadline = '2019-12-03';
 
     function getTimeRemaining(endtime) {
         let t = Date.parse(endtime) - Date.parse(new Date()); // Вычисляем разницу между дедлайном и настоящим временем (мс)
@@ -67,19 +67,19 @@ window.addEventListener('DOMContentLoaded', function() {
                 hours.textContent = t.hours;
             }
             else {
-                hours.textContent = '0' + t.hours;
+                hours.textContent = `0${t.hours}`;
             }
             if (t.minutes >= 10) {
                 minutes.textContent = t.minutes; 
             }
             else {
-                minutes.textContent = '0' + t.minutes;
+                minutes.textContent = `0${t.minutes}`;
             }
             if (t.seconds >= 10) {
                 seconds.textContent = t.seconds; 
             }
             else {
-                seconds.textContent = '0' + t.seconds;
+                seconds.textContent = `0${t.seconds}`;
             }
 
             if (t.total <= 0) {
@@ -91,6 +91,23 @@ window.addEventListener('DOMContentLoaded', function() {
     if (Date.parse(deadline) > Date.parse(new Date())) {
         setClock('timer', deadline); 
     }
-    
+     
+    //Модальное окно
+
+    let more = document.querySelector('.more');
+    let overlay = document.querySelector('.overlay');
+    let close = document.querySelector('.popup-close');
+
+    more.addEventListener('click', function() {
+        overlay.style.display = 'block';
+        this.classList.add('more-splash');
+        document.body.style.overflow = 'hidden'; //ЗАпретили прокрутку страницы когда открыто модальное окно
+    });
+
+    close.addEventListener('click', function() {
+        overlay.style.display = 'none';
+        more.classList.remove('more-splash');
+        document.body.style.overflow = '';
+    })
 
 });
