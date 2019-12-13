@@ -272,26 +272,26 @@ window.addEventListener('DOMContentLoaded', function() {
         totalValue.innerHTML = 0;
         
         persons.addEventListener('change', function() {
-            personsSum = +this.value;
-            total = (daysSum + personsSum) * 4000;
-
-            if (restDays.value == '') {
-                totalValue.innerHTML = 0;
+            if (restDays.value != '' && persons.value != ''){
+                personsSum = +this.value;
+                daysSum = +restDays.value;
+                total = (daysSum + personsSum) * 4000;
+                totalValue.innerHTML = total;   
             }
             else {
-                totalValue.innerHTML = total;
+                totalValue.innerHTML = 0;
             }
         });
 
         restDays.addEventListener('change', function() {
-            daysSum = +this.value;
-            total = (daysSum + personsSum) * 4000;
-
-            if (persons.value == '') {
-                totalValue.innerHTML = 0;
+            if (restDays.value != '' && persons.value != ''){
+                daysSum = +this.value;
+                personsSum = +persons.value;
+                total = (daysSum + personsSum) * 4000;
+                totalValue.innerHTML = total;
             }
             else {
-                totalValue.innerHTML = total;
+                totalValue.innerHTML = 0;
             }
         });
 
