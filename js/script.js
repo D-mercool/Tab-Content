@@ -109,7 +109,6 @@ window.addEventListener('DOMContentLoaded', function() {
         more.classList.remove('more-splash');
         document.body.style.overflow = '';
     });
-<<<<<<< HEAD
 
     //Форма (модальное окно)
 
@@ -305,7 +304,6 @@ window.addEventListener('DOMContentLoaded', function() {
                 totalValue.innerHTML = a * this.options[this.selectedIndex].value; //Получаем value из выбора из списка
             }
         });
-=======
->>>>>>> 25fc2052e214f4a7a75877014a476ebe16dfa97f
+
 
 });
